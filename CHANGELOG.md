@@ -1,3 +1,10 @@
+# 1.0.0 (2024-12-06)
+
+
+### Features
+
+* **project:** start project from a boilerplate ([fa8179d](https://github.com/kndungu/project/commit/fa8179dda145a9c60cb0e49ebc93500dde674713))
+
 ## [3.60.2](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.60.1...v3.60.2) (2024-12-05)
 
 
