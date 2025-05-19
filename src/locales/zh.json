@@ -1,74 +1,74 @@
 {
   "RootLayout": {
-    "home_link": "Home",
-    "about_link": "About",
-    "counter_link": "Counter",
-    "portfolio_link": "Portfolio",
-    "sign_in_link": "Sign in",
-    "sign_up_link": "Sign up"
+    "home_link": "首页",
+    "about_link": "关于",
+    "counter_link": "统计",
+    "portfolio_link": "作品集",
+    "sign_in_link": "登录",
+    "sign_up_link": "注册"
   },
   "BaseTemplate": {
-    "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS",
-    "made_with": "Made with <author></author>."
+    "description": "使用Tailwind CSS的Nextjs Boilerplate启动代码",
+    "made_with": "由<author></author>制作。"
   },
   "Index": {
-    "meta_title": "Next.js Boilerplate Presentation",
-    "meta_description": "Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework.",
-    "sponsors_title": "Sponsors"
+    "meta_title": "Next.js Boilerplate 展示",
+    "meta_description": "Next.js Boilerplate 是您项目的完美启动代码。请使用 Next.js 框架构建您的 React 应用程序。",
+    "sponsors_title": "赞助商"
   },
   "Counter": {
-    "meta_title": "Counter",
-    "meta_description": "An example of DB operation",
-    "loading_counter": "Loading counter...",
-    "security_powered_by": "Security, bot detection and rate limiting powered by"
+    "meta_title": "统计",
+    "meta_description": "数据库操作示例",
+    "loading_counter": "正在统计中……",
+    "security_powered_by": "安全性、机器人检测和速率限制的支持提供者为"
   },
   "CounterForm": {
-    "presentation": "The counter is stored in the database and incremented by the value you provide.",
-    "label_increment": "Increment by",
-    "button_increment": "Increment"
+    "presentation": "统计存储在数据库中，并按您提供的值递增。",
+    "label_increment": "递增数值",
+    "button_increment": "增量"
   },
   "CurrentCount": {
-    "count": "Count: {count}"
+    "count": "计数：{count}"
   },
   "About": {
-    "meta_title": "About",
-    "meta_description": "About page description",
-    "about_paragraph": "Welcome to our About page! We are a team of passionate individuals dedicated to creating amazing software.",
-    "translation_powered_by": "Translation powered by"
+    "meta_title": "关于",
+    "meta_description": "关于页面描述",
+    "about_paragraph": "欢迎来到我们的关于页面！我们是一群充满激情的人，致力于打造出色的软件。",
+    "translation_powered_by": "翻译提供者为"
   },
   "Portfolio": {
-    "meta_title": "Portfolio",
-    "meta_description": "Welcome to my portfolio page!",
-    "presentation": "Welcome to my portfolio page! Here you will find a carefully curated collection of my work and accomplishments. Through this portfolio, I'm to showcase my expertise, creativity, and the value I can bring to your projects.",
-    "portfolio_name": "Portfolio {name}",
-    "error_reporting_powered_by": "Error reporting powered by",
-    "coverage_powered_by": "Code coverage powered by"
+    "meta_title": "作品集",
+    "meta_description": "欢迎来到我的作品集页面！",
+    "presentation": "欢迎来到我的作品集页面！在这里，您将看到我精心挑选的一系列作品和成就。通过这个作品集，我想展示我的专业知识、创造力以及我可以为您的项目带来的价值。",
+    "portfolio_name": "作品集{name}",
+    "error_reporting_powered_by": "错误报告提供者为",
+    "coverage_powered_by": "代码覆盖率提供者为"
   },
   "PortfolioSlug": {
-    "meta_title": "Portfolio {slug}",
-    "meta_description": "Portfolio {slug} description",
-    "header": "Portfolio {slug}",
-    "content": "Created a set of promotional materials and branding elements for a corporate event. Crafted a visually unified theme, encompassing a logo, posters, banners, and digital assets. Integrated the client's brand identity while infusing it with a contemporary and innovative approach. Garnered favorable responses from event attendees, resulting in a successful event with heightened participant engagement and increased brand visibility.",
-    "log_management_powered_by": "Log management powered by"
+    "meta_title": "作品集{slug}",
+    "meta_description": "作品集{slug}描述",
+    "header": "作品集{slug}",
+    "content": "为一场公司活动创建了一系列宣传材料和品牌元素。精心设计了统一的视觉主题，包括标志、海报、横幅和数字资产。将客户的品牌标识与现代创新的方法相结合。获得了活动参与者的积极反响，活动取得成功，参与者的参与度和品牌知名度都有所提高。",
+    "log_management_powered_by": "日志管理提供者为"
   },
   "SignIn": {
-    "meta_title": "Sign in",
-    "meta_description": "Seamlessly sign in to your account with our user-friendly login process."
+    "meta_title": "登录",
+    "meta_description": "通过我们用户友好的登录流程轻松登录您的账户。"
   },
   "SignUp": {
-    "meta_title": "Sign up",
-    "meta_description": "Effortlessly create an account through our intuitive sign-up process."
+    "meta_title": "注册",
+    "meta_description": "通过我们直观的注册流程轻松创建账户。"
   },
   "Dashboard": {
-    "meta_title": "Dashboard",
-    "hello_message": "Hello {email}!"
+    "meta_title": "控制面板",
+    "hello_message": "您好，{email}！"
   },
   "UserProfile": {
-    "meta_title": "User Profile"
+    "meta_title": "用户资料"
   },
   "DashboardLayout": {
-    "dashboard_link": "Dashboard",
-    "user_profile_link": "Manage your account",
-    "sign_out": "Sign out"
+    "dashboard_link": "控制面板",
+    "user_profile_link": "管理您的账户",
+    "sign_out": "退出登录"
   }
 }
