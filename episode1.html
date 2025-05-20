@@ -187,10 +187,8 @@
       </svg>
     </button>
   </div>
-  <script>
+  <script type="module">
     import { episode1 } from './wordPairs.js'
-
-    console.log('Value of episode 1', episode1)
 
     const flashcard = document.getElementById('myFlashcard');
     const flipButton = document.getElementById('flipButton');
@@ -263,6 +261,36 @@
         e.preventDefault();
         flashcard.classList.toggle('flipped');
       }
+    });
+
+    // Add mobile swipe gesture support
+    let touchStartX = null;
+    let touchEndX = null;
+
+    flashcard.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+      }
+    });
+
+    flashcard.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      touchEndX = e.changedTouches[0].clientX;
+      const dx = touchEndX - touchStartX;
+      const threshold = 50; // Minimum px to be considered a swipe
+
+      if (dx < -threshold) {
+        // Swipe left: next card
+        displayWord();
+      } else if (dx > threshold) {
+        // Swipe right: previous card
+        if (history.length > 1) {
+          history.pop();
+          displayWord(history[history.length - 1]);
+        }
+      }
+      touchStartX = null;
+      touchEndX = null;
     });
 
     displayWord(); // Initial display
