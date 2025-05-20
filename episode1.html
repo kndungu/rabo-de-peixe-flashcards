@@ -278,13 +278,13 @@
     let touchStartX = null;
     let touchEndX = null;
 
-    flashcard.addEventListener('touchstart', (e) => {
+    document.addEventListener('touchstart', (e) => {
       if (e.touches.length === 1) {
         touchStartX = e.touches[0].clientX;
       }
     });
 
-    flashcard.addEventListener('touchend', (e) => {
+    document.addEventListener('touchend', (e) => {
       if (touchStartX === null) return;
       touchEndX = e.changedTouches[0].clientX;
       const dx = touchEndX - touchStartX;
