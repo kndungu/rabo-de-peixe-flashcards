@@ -51,5 +51,6 @@
     "pcss",
     "postcss",
     "github-actions-workflow"
-  ]
+  ],
+  "testing.automaticallyOpenTestResults": "neverOpen"
 }
