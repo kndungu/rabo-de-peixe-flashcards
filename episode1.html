@@ -27,15 +27,15 @@
     }
 
     .flashcard {
-      perspective: 1200px;
-      min-width: 340px;
-      min-height: 220px;
+      perspective: 75rem;
+      min-width: 21.25rem;
+      min-height: 13.75rem;
       width: 100%;
-      max-width: 420px;
-      height: 280px;
+      max-width: 26.25rem;
+      height: 17.5rem;
       margin: 0 auto;
       border-radius: 1.25rem;
-      box-shadow: 0 10px 32px 0 rgba(30, 64, 175, 0.18), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+      box-shadow: 0 0.625rem 2rem 0 rgba(30, 64, 175, 0.18), 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.08);
       cursor: pointer;
       transition: box-shadow 0.3s;
       position: relative;
@@ -45,7 +45,7 @@
     }
 
     .flashcard:hover {
-      box-shadow: 0 16px 48px 0 rgba(30, 64, 175, 0.22), 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+      box-shadow: 0 1rem 3rem 0 rgba(30, 64, 175, 0.22), 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
     }
 
     .flashcard-inner {
@@ -77,8 +77,8 @@
       font-weight: 600;
       padding: 2rem;
       box-sizing: border-box;
-      min-width: 340px;
-      min-height: 220px;
+      min-width: 21.25rem;
+      min-height: 13.75rem;
       user-select: none;
       transition: background 0.3s;
     }
@@ -105,13 +105,13 @@
       background: linear-gradient(135deg, #6366f1 60%, #818cf8 100%);
       color: white;
       font-weight: bold;
-      width: 64px;
-      height: 64px;
+      width: 4rem;
+      height: 4rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.18);
+      box-shadow: 0 0.125rem 0.5rem rgba(99, 102, 241, 0.18);
       border: none;
       outline: none;
       cursor: pointer;
@@ -121,7 +121,7 @@
 
     .control-button:active {
       transform: scale(0.96);
-      box-shadow: 0 1px 4px rgba(99, 102, 241, 0.10);
+      box-shadow: 0 0.0625rem 0.25rem rgba(99, 102, 241, 0.10);
     }
 
     .control-button:disabled {
@@ -132,12 +132,13 @@
     }
 
     .icon {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     .flip-svg {
-      width: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     @media (max-width: 500px) {
@@ -152,7 +153,7 @@
       }
 
       .flashcard {
-        min-height: 120px;
+        min-height: 7.5rem;
       }
     }
   </style>
