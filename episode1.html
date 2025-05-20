@@ -239,14 +239,6 @@
       nextButton.classList.toggle('opacity-50', nextButton.disabled);
     }
 
-    flipButton.addEventListener('click', () => {
-      flashcard.classList.toggle('flipped');
-    });
-
-    flashcard.addEventListener('click', () => {
-      flashcard.classList.toggle('flipped');
-    });
-
     prevButton.addEventListener('click', () => {
       if (history.length > 1) {
         history.pop(); // Remove current
@@ -272,6 +264,24 @@
         e.preventDefault();
         flashcard.classList.toggle('flipped');
       }
+    });
+
+    // Flip card on any click (except when clicking next/prev buttons)
+    document.addEventListener('click', (e) => {
+      // Prevent flipping if clicking next or previous button
+      if (
+        e.target.closest('#nextButton') ||
+        e.target.closest('#prevButton')
+      ) {
+        return;
+      }
+      flashcard.classList.toggle('flipped');
+    });
+
+    // Still allow flip button to work (optional, but keeps accessibility)
+    flipButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent bubbling to document
+      flashcard.classList.toggle('flipped');
     });
 
     // Add mobile swipe gesture support
