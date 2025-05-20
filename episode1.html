@@ -136,6 +136,10 @@
       height: 28px;
     }
 
+    .flip-svg {
+      width: 40px;
+    }
+
     @media (max-width: 500px) {
 
       .flashcard,
@@ -172,12 +176,18 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
       </svg>
     </button>
-    <button class="control-button" id="flipButton">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-        class="icon">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M9.828 3.717A8 8 0 0 1 13 2.118l4.55 4.55a7 7 0 0 1 3.343 3.343L21.882 13a8 8 0 0 1-2.118 13H4.118a8 8 0 0 1-2.118-13L7.45 7.45a7 7 0 0 1 3.343-3.343L9.828 3.717Z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v8m-3-3h6" />
+    <button class="control-button" id="flipButton" aria-label="Flip card">
+      <svg width="100" height="100" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        class="flip-svg">
+        <!-- Card 1 -->
+        <rect x="10" y="12" width="24" height="36" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none" />
+
+        <!-- Card 2 (behind, offset to suggest a flip) -->
+        <rect x="22" y="16" width="24" height="36" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"
+          opacity="0.5" />
+
+        <!-- Flip arrow -->
+        <path d="M48 24c-4 0-8 4-8 8s4 8 8 8v4l8-6-8-6v4c-2 0-4-2-4-4s2-4 4-4h4v-4h-4z" fill="currentColor" />
       </svg>
     </button>
     <button class="control-button" id="nextButton">
