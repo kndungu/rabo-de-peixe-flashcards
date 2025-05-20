@@ -27,15 +27,15 @@
     }
 
     .flashcard {
-      perspective: 1200px;
-      min-width: 340px;
-      min-height: 220px;
+      perspective: 75rem;
+      min-width: 21.25rem;
+      min-height: 13.75rem;
       width: 100%;
-      max-width: 420px;
-      height: 280px;
+      max-width: 26.25rem;
+      height: 17.5rem;
       margin: 0 auto;
       border-radius: 1.25rem;
-      box-shadow: 0 10px 32px 0 rgba(30, 64, 175, 0.18), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+      box-shadow: 0 0.625rem 2rem 0 rgba(30, 64, 175, 0.18), 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.08);
       cursor: pointer;
       transition: box-shadow 0.3s;
       position: relative;
@@ -45,7 +45,7 @@
     }
 
     .flashcard:hover {
-      box-shadow: 0 16px 48px 0 rgba(30, 64, 175, 0.22), 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+      box-shadow: 0 1rem 3rem 0 rgba(30, 64, 175, 0.22), 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.10);
     }
 
     .flashcard-inner {
@@ -77,8 +77,8 @@
       font-weight: 600;
       padding: 2rem;
       box-sizing: border-box;
-      min-width: 340px;
-      min-height: 220px;
+      min-width: 21.25rem;
+      min-height: 13.75rem;
       user-select: none;
       transition: background 0.3s;
     }
@@ -105,13 +105,13 @@
       background: linear-gradient(135deg, #6366f1 60%, #818cf8 100%);
       color: white;
       font-weight: bold;
-      width: 64px;
-      height: 64px;
+      width: 4rem;
+      height: 4rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.18);
+      box-shadow: 0 0.125rem 0.5rem rgba(99, 102, 241, 0.18);
       border: none;
       outline: none;
       cursor: pointer;
@@ -121,7 +121,7 @@
 
     .control-button:active {
       transform: scale(0.96);
-      box-shadow: 0 1px 4px rgba(99, 102, 241, 0.10);
+      box-shadow: 0 0.0625rem 0.25rem rgba(99, 102, 241, 0.10);
     }
 
     .control-button:disabled {
@@ -132,8 +132,13 @@
     }
 
     .icon {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .flip-svg {
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     @media (max-width: 500px) {
@@ -148,7 +153,7 @@
       }
 
       .flashcard {
-        min-height: 120px;
+        min-height: 7.5rem;
       }
     }
   </style>
@@ -172,12 +177,18 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
       </svg>
     </button>
-    <button class="control-button" id="flipButton">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-        class="icon">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M9.828 3.717A8 8 0 0 1 13 2.118l4.55 4.55a7 7 0 0 1 3.343 3.343L21.882 13a8 8 0 0 1-2.118 13H4.118a8 8 0 0 1-2.118-13L7.45 7.45a7 7 0 0 1 3.343-3.343L9.828 3.717Z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v8m-3-3h6" />
+    <button class="control-button" id="flipButton" aria-label="Flip card">
+      <svg width="100" height="100" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        class="flip-svg">
+        <!-- Card 1 -->
+        <rect x="10" y="12" width="24" height="36" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none" />
+
+        <!-- Card 2 (behind, offset to suggest a flip) -->
+        <rect x="22" y="16" width="24" height="36" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"
+          opacity="0.5" />
+
+        <!-- Flip arrow -->
+        <path d="M48 24c-4 0-8 4-8 8s4 8 8 8v4l8-6-8-6v4c-2 0-4-2-4-4s2-4 4-4h4v-4h-4z" fill="currentColor" />
       </svg>
     </button>
     <button class="control-button" id="nextButton">
@@ -187,10 +198,8 @@
       </svg>
     </button>
   </div>
-  <script>
+  <script type="module">
     import { episode1 } from './wordPairs.js'
-
-    console.log('Value of episode 1', episode1)
 
     const flashcard = document.getElementById('myFlashcard');
     const flipButton = document.getElementById('flipButton');
@@ -263,6 +272,36 @@
         e.preventDefault();
         flashcard.classList.toggle('flipped');
       }
+    });
+
+    // Add mobile swipe gesture support
+    let touchStartX = null;
+    let touchEndX = null;
+
+    flashcard.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+      }
+    });
+
+    flashcard.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      touchEndX = e.changedTouches[0].clientX;
+      const dx = touchEndX - touchStartX;
+      const threshold = 50; // Minimum px to be considered a swipe
+
+      if (dx < -threshold) {
+        // Swipe left: next card
+        displayWord();
+      } else if (dx > threshold) {
+        // Swipe right: previous card
+        if (history.length > 1) {
+          history.pop();
+          displayWord(history[history.length - 1]);
+        }
+      }
+      touchStartX = null;
+      touchEndX = null;
     });
 
     displayWord(); // Initial display
